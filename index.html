@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cine</title>
+</head>
+<body>
+    <!--header-->
+    <header id="header-fondo">
+        <section id="header-contenido">
+            <section id="header-img"><img src="img/C+logo+light+Blue+and+red_SCREEN.png" alt="" id="img-header"></section>
+            <section id="header-letra">CineMon</section>
+        </section>
+    </header>
+    <!--Seleccion de peliculas, y horario-->
+    <section id="peliculas">
+        <section id="peliculas-titulo"><h1>Elige tu pelicula</h1></section>
+        <section id="parte1">
+            <img src="img/C1.jpg" alt="" class="galeria" id="pimg">
+            <section id="opciones1">
+                <label>Deadpool 2</label>
+                <hr>
+                <input class="opcion" type="button" value="13:40" onclick="pelicula('C1', 'Deadpool', '13:40', '1');">
+                <input class="opcion" type="button" value="14:15" onclick="pelicula('C1', 'Deadpool', '16:15', '1');">
+                <input class="opcion" type="button" value="19:20" onclick="pelicula('C1', 'Deadpool', '20:20', '1');">
+            </section>
+            <img src="img/C2.jpg" alt="" class="galeria" id="pimg">
+            <section id="opciones2">
+                <label>Spider Home Coming</label>
+                <hr>
+                <input class="opcion" type="button" value="13:40" onclick="pelicula('C2', 'Spider Home Coming', '13:40', '2');">
+                <input class="opcion" type="button" value="14:15" onclick="pelicula('C2', 'Spider Home Coming', '16:15', '2');">
+                <input class="opcion" type="button" value="19:20" onclick="pelicula('C2', 'Spider Home Coming', '20:20', '2');">
+            </section>
+            <img src="img/C3.jpg" alt="" class="galeria" id="pimg">
+            <section id="opciones3">
+                <label>The Super Mario Bros Movie</label>
+                <hr>
+                <input class="opcion" type="button" value="13:40" onclick="pelicula('C3', 'The Super Mario Bros Movie', '13:40', '3');">
+                <input class="opcion" type="button" value="14:15" onclick="pelicula('C3', 'The Super Mario Bros Movie', '16:15', '3');">
+                <input class="opcion" type="button" value="19:20" onclick="pelicula('C3', 'The Super Mario Bros Movie', '20:20', '3');">
+            </section>
+        </section>
+        <section id="parte2">
+            <img id="foto" src="img/foto.jpg" class="galeria" alt="">
+            <section id="pelicula-seleccionada"></section>
+        </section>
+        <section class="ubicacion-boton">
+            <input type="button" class="boton-mostrar" value="Continuar" onclick="mostrar(1);" disabled>
+        </section>
+    </section>
+    <!--Seleccion de boletos adultos, niños
+    Si hay 1 adulto  
+    Pueden incluir 4 menores 
+    Si hay 2 adultos 
+    Pueden incluir 3 menores 
+    Si hay 3 adultos  
+    Pueden incluir 2 menores 
+    Si hay 4 adultos  
+    Ya no pueden sentarse ningún menor.-->
+        <section class="temas" id="boletos" style="display: none;">
+            <section id="boletos-titulo"><h1>Elige tus boletos</h1></section>
+            <section id="boletos-selector">
+                <label class="boletos-texto">Adulto/s</label><label class="boletos-texto">90$</label>
+                <input type="text" name="adulto" id="adulto" value="0" disabled>
+                <input type="button" id="adultoMenos" class="botones-cantidad" name="0" value="-" disabled onclick="precio(0);">
+                <input type="button" id="adultoMas" class="botones-cantidad" name="1" value="+" onclick="precio(1);">
+                <br>
+                <label class="boletos-texto">Niño/s</label><label class="boletos-texto">70$</label>
+                <input type="text" name="niño" id="niño" value="0" disabled>
+                <input type="button" id="niñoMenos" class="botones-cantidad" name="2" value="-" disabled onclick="precio(2);">
+                <input type="button" id="niñoMas" class="botones-cantidad" name="3" value="+" onclick="precio(3);">
+            </section>
+            <section id="boletos-precio">
+                <section id="precio">
+                    Total (IVA) incluido: $0
+                </section>
+            </section>
+            <section class="ubicacion-boton">
+                <input type="button" class="boton-mostrar" value="Continuar" onclick="mostrar(2);" disabled>
+            </section>
+        </section>
+        <section id="edades" style="display: none;">
+            <section id="edadNiño">
+            
+            </section>
+            <section class="ubicacion-boton">
+                <input type="button" class="boton-mostrar" value="Continuar" onclick="mostrar(3);" disabled>
+            </section>
+        </section>
+        <section class="temas" id="datos-personales" style="display: none;">
+            <section id="peliculas-titulo"><h1>Agregar datos personales</h1></section>
+            <input class="datos-persona" type="text" name="nombre" id="nombre" placeholder="Inserta tu nombre aquí">
+            <br>
+            <input class="datos-persona" type="email" name="email" id="email" placeholder="ejemplo@gmail.com" onblur="habilitarTicket()">
+            <section class="ubicacion-boton">
+                <input type="button" class="boton-mostrar" value="Generar Ticket" onclick="generarTicket();" disabled>
+            </section>
+        </section>
+    <!--Seleccion de asientos-->
+
+    <!--Ingresar datos bancarios-->
+
+    <!--footer-->
+    <footer id="footer-texto">Gracias por su preferencia a CineMon</footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
